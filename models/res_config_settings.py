@@ -8,3 +8,4 @@ class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
     group_product_tolerance = fields.Boolean("Manage tolerance in qty transferred per products", implied_group='product_tolerance.group_product_tolerance')
+    tolerance_precision = fields.Integer("Tolerance precision",related='company_id.tolerance_precision',readonly=False)

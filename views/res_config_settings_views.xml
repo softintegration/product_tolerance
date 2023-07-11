@@ -17,6 +17,10 @@
                         <div class="text-muted">
                             Check this option if you want to configure the tolerance rate in the quantities to be transferred per product.
                         </div>
+                        <label for="tolerance_precision" attrs="{'invisible':[('group_product_tolerance','=',False)]}"/>
+                        <div attrs="{'invisible':[('group_product_tolerance','=',False)]}">
+                            <field name="tolerance_precision"/> <b> Decimal places</b>
+                        </div>
                     </div>
                 </div>
             </xpath>
