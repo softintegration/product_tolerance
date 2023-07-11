@@ -19,9 +19,8 @@ class ProductTemplate(models.Model):
             diff_ratio_rate = ((qty_done - ordred_qty) / ordred_qty) * 100
             if float_compare(diff_ratio_rate, tolerance_line[0].tolerance_ratio,
                              precision_rounding=uom and uom.rounding or self.uom_id.rounding) > 0:
-                raise UserError(
-                    "You have exceeded the tolerance {}(%) of the product {} !".format(
-                        tolerance_line[0].tolerance_ratio, self.display_name))
+                raise UserError(_("You have exceeded the tolerance (%s%s) of the product %s !")%(
+                        int(tolerance_line[0].tolerance_ratio),'%', self.display_name))
 
 
 class ProductTemplateToleranceLine(models.Model):
